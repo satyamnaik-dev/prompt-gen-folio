@@ -24,7 +24,7 @@ export function Hero() {
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               Backend Developer
-              <span className="block tech-gradient bg-clip-text text-transparent">
+              <span className="block text-primary font-bold border-2 border-primary rounded-lg px-4 py-2 mt-4 inline-block">
                 AI & Data Solutions
               </span>
             </h1>
