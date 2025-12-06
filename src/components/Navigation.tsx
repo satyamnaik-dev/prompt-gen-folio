@@ -13,7 +13,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <Code2 className="h-6 w-6 text-primary" />
-            <span className="font-mono font-semibold text-lg">dev.portfolio</span>
+            <span className="font-mono font-semibold text-lg">Satyam<span className="text-primary">.dev</span></span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -24,10 +24,28 @@ export function Navigation() {
               About
             </button>
             <button
+              onClick={() => scrollToSection("skills")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Skills
+            </button>
+            <button
               onClick={() => scrollToSection("projects")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Projects
+            </button>
+            <button
+              onClick={() => scrollToSection("certifications")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Certifications
+            </button>
+            <button
+              onClick={() => scrollToSection("education")}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Education
             </button>
             <button
               onClick={() => scrollToSection("contact")}
