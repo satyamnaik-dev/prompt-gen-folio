@@ -1,26 +1,29 @@
 import { useEffect, useState, useRef } from "react";
-import { Progress } from "@/components/ui/progress";
 
 const skills = [
   { name: "Python", level: 95, category: "Languages" },
-  { name: "FastAPI / Django", level: 90, category: "Languages" },
-  { name: "TypeScript", level: 80, category: "Languages" },
-  { name: "SQL", level: 85, category: "Languages" },
-  { name: "PostgreSQL", level: 88, category: "Data" },
-  { name: "MongoDB", level: 75, category: "Data" },
-  { name: "Apache Kafka", level: 70, category: "Data" },
-  { name: "LangChain / LLMs", level: 85, category: "AI" },
-  { name: "OpenAI / Anthropic APIs", level: 90, category: "AI" },
-  { name: "React", level: 78, category: "Frontend" },
-  { name: "Docker / Kubernetes", level: 72, category: "DevOps" },
-  { name: "AWS / GCP", level: 75, category: "DevOps" },
+  { name: "R", level: 80, category: "Languages" },
+  { name: "SQL", level: 90, category: "Languages" },
+  { name: "Java (Core)", level: 75, category: "Languages" },
+  { name: "JavaScript", level: 78, category: "Languages" },
+  { name: "NumPy / Pandas", level: 92, category: "Data Science" },
+  { name: "Scikit-learn", level: 88, category: "Data Science" },
+  { name: "TensorFlow / PyTorch", level: 82, category: "Data Science" },
+  { name: "Matplotlib / Seaborn", level: 90, category: "Data Science" },
+  { name: "MySQL / PostgreSQL", level: 88, category: "Databases" },
+  { name: "MongoDB", level: 80, category: "Databases" },
+  { name: "Spark (PySpark)", level: 75, category: "Big Data" },
+  { name: "AWS (S3, EC2, SageMaker)", level: 70, category: "Cloud" },
+  { name: "Docker", level: 72, category: "DevOps" },
+  { name: "Git / GitHub", level: 90, category: "DevOps" },
 ];
 
 const categoryColors: Record<string, string> = {
   Languages: "bg-primary",
-  Data: "bg-emerald-500",
-  AI: "bg-violet-500",
-  Frontend: "bg-amber-500",
+  "Data Science": "bg-violet-500",
+  Databases: "bg-emerald-500",
+  "Big Data": "bg-amber-500",
+  Cloud: "bg-sky-500",
   DevOps: "bg-rose-500",
 };
 
@@ -58,7 +61,7 @@ export function Skills() {
   const categories = [...new Set(skills.map((s) => s.category))];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-background">
+    <section ref={sectionRef} id="skills" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
