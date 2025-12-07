@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,15 +14,34 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name, email, subject, message },
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Message sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
       });
-      setIsSubmitting(false);
       (e.target as HTMLFormElement).reset();
-    }, 1000);
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,6 +63,7 @@ export function Contact() {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   placeholder="Your name"
                   required
                   className="bg-background"
@@ -54,6 +75,7 @@ export function Contact() {
                 </label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="your.email@example.com"
                   required
@@ -68,6 +90,7 @@ export function Contact() {
               </label>
               <Input
                 id="subject"
+                name="subject"
                 placeholder="What's this about?"
                 required
                 className="bg-background"
@@ -80,6 +103,7 @@ export function Contact() {
               </label>
               <Textarea
                 id="message"
+                name="message"
                 placeholder="Tell me about your project or inquiry..."
                 rows={6}
                 required
