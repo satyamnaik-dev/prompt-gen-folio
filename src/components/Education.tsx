@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const education = [
   {
     institution: "Sambalpur University Institute of Information Technology",
+    degree: "Master of Computer Applications (MCA)",
     university: "Sambalpur University",
     location: "Burla, Sambalpur, Odisha",
     percentage: "65.86%",
@@ -11,10 +12,27 @@ const education = [
   },
   {
     institution: "Jasoda Bishnu College",
+    degree: "Bachelor of Science (B.Sc)",
     university: "Sambalpur University",
     location: "Sardhapali, Sundergarh, Odisha",
     percentage: "72.2%",
-    duration: "Aug 2014 – May 2018",
+    duration: "Aug 2018 – April 2021",
+  },
+  {
+    institution: "Vesaja Rambhabati Jr College, Kundukela",
+    degree: "12th (Science)",
+    university: "CHSE (Council of Higher Secondary Education, Odisha)",
+    location: "Kundukela, Odisha",
+    percentage: "45.83%",
+    duration: "2016 – March 2018",
+  },
+  {
+    institution: "Talpatia High School, Talpatia",
+    degree: "10th",
+    university: "BSE (Board of Secondary Education, Odisha)",
+    location: "Talpatia, Odisha",
+    percentage: "67.00%",
+    duration: "2006 – February 2016",
   },
 ];
 
@@ -47,8 +65,9 @@ export function Education() {
                           <GraduationCap className="h-6 w-6 text-primary" />
                         </div>
                         <div className="flex-1 space-y-2">
-                          <h3 className="text-xl font-semibold">{edu.institution}</h3>
-                          <p className="text-muted-foreground">{edu.university}</p>
+                          <h3 className="text-xl font-semibold">{edu.degree}</h3>
+                          <p className="font-medium">{edu.institution}</p>
+                          <p className="text-muted-foreground text-sm">{edu.university}</p>
                           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                             <div className="flex items-center gap-1">
                               <MapPin className="h-4 w-4" />
