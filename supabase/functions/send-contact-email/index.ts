@@ -26,8 +26,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Received contact form submission:", { name, email, subject });
 
-    // Send email using Resend API
-    const res = await fetch("https://api.resend.com/emails", {
+    // Send notification email to portfolio owner
+    const notificationRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,14 +57,57 @@ const handler = async (req: Request): Promise<Response> => {
       }),
     });
 
-    const data = await res.json();
-    console.log("Resend API response:", data);
+    // Send confirmation email to the person who submitted the form
+    const confirmationRes = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Satyam Naik <onboarding@resend.dev>",
+        to: [email],
+        subject: "Thank you for reaching out!",
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #3b82f6;">Thank You, ${name}!</h2>
+            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+              I've received your message and appreciate you taking the time to reach out.
+            </p>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <p style="color: #6b7280; margin: 0;"><strong>Your message subject:</strong> ${subject}</p>
+            </div>
+            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+              I'll review your message and get back to you as soon as possible, typically within 24-48 hours.
+            </p>
+            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+              Best regards,<br>
+              <strong>Satyam Naik</strong>
+            </p>
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;">
+            <p style="color: #9ca3af; font-size: 12px;">
+              This is an automated confirmation email. Please do not reply directly to this message.
+            </p>
+          </div>
+        `,
+      }),
+    });
 
-    if (!res.ok) {
-      throw new Error(data.message || "Failed to send email");
+    const notificationData = await notificationRes.json();
+    const confirmationData = await confirmationRes.json();
+    
+    console.log("Notification email response:", notificationData);
+    console.log("Confirmation email response:", confirmationData);
+
+    if (!notificationRes.ok) {
+      throw new Error(notificationData.message || "Failed to send notification email");
     }
 
-    return new Response(JSON.stringify({ success: true, data }), {
+    if (!confirmationRes.ok) {
+      console.warn("Failed to send confirmation email:", confirmationData.message);
+    }
+
+    return new Response(JSON.stringify({ success: true, notificationData, confirmationData }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
