@@ -1,6 +1,9 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -24,7 +27,19 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, subject, message }: ContactEmailRequest = await req.json();
 
-    console.log("Received contact form submission:", { name, email, subject });
+    // Initialize Supabase client with service role
+    const supabase = createClient(SUPABASE_URL!, SUPABASE_SERVICE_ROLE_KEY!);
+
+    // Store submission in database
+    const { error: dbError } = await supabase
+      .from("contact_submissions")
+      .insert({ name, email, subject, message });
+
+    if (dbError) {
+      console.error("Failed to store submission:", dbError);
+    } else {
+      console.log("Submission stored successfully");
+    }
 
     // Send notification email to portfolio owner
     const notificationRes = await fetch("https://api.resend.com/emails", {
