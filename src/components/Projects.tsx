@@ -5,24 +5,24 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "Customer Churn Prediction Model",
-    description: "Built a predictive ML model to analyze customer data and forecast churn probability with 85% accuracy. Performed extensive data cleaning, feature engineering, and applied logistic regression, random forest, and XGBoost. Visualized insights using Matplotlib and Seaborn.",
-    tags: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
-    duration: "Apr 2025 – Jul 2025",
+    title: "GeoRoute App",
+    description: "A geospatial analysis tool that processes encoded route data to visualize multiple path options and automatically identify the shortest or most efficient route. Features geospatial computation, polyline reconstruction, and map-based insights through an interactive Python-driven interface with Folium/Streamlit.",
+    tags: ["Python", "Data Engineering", "ETL", "GIS", "Data Visualization"],
+    duration: "Oct 2025 – Present",
     github: "https://github.com/satyamnaik-dev",
   },
   {
-    title: "Stock Price Prediction System",
-    description: "Developed an LSTM-based deep learning model to predict stock market trends using historical data. Implemented feature scaling, time-series analysis, and evaluated RMSE to ensure accuracy. Deployed model using Streamlit for interactive visualization.",
-    tags: ["Python", "TensorFlow", "Keras", "LSTM", "Streamlit"],
-    duration: "Jan 2025 – Mar 2025",
+    title: "Dash App - Data Visualization",
+    description: "Built interactive, production-ready data applications using Python, Plotly Dash, and modern data-viz patterns. Features scalable dashboard layouts, dynamic callbacks, interactive components, and external API integrations for real-world data insights.",
+    tags: ["Python", "Plotly", "Dash", "Dashboards", "Data Visualization"],
+    duration: "Aug 2025 – Present",
     github: "https://github.com/satyamnaik-dev",
   },
   {
-    title: "Covid-19 Data Analysis Dashboard",
-    description: "Analyzed Covid-19 datasets to track global trends of cases, recoveries, and vaccination. Built an interactive dashboard using Dash and Plotly to visualize real-time data. Performed statistical analysis for healthcare resource allocation.",
-    tags: ["Python", "Pandas", "Plotly", "Dash"],
-    duration: "Sep 2024 – Dec 2024",
+    title: "Blood Bank Management System",
+    description: "Developed a Blood Bank Management System using Python, Django, HTML/CSS, JavaScript, and Django ORM. Implemented donor registration, blood inventory tracking, and request management with secure data handling and efficient donor-recipient matching.",
+    tags: ["Python", "Django", "JavaScript", "Django REST Framework", "Bootstrap"],
+    duration: "Feb 2024 – May 2024",
     github: "https://github.com/satyamnaik-dev",
   },
 ];
