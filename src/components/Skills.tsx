@@ -1,30 +1,30 @@
 import { useEffect, useState, useRef } from "react";
 
 const skills = [
-  { name: "Python", level: 95, category: "Languages" },
-  { name: "R", level: 80, category: "Languages" },
-  { name: "SQL", level: 90, category: "Languages" },
-  { name: "Java (Core)", level: 75, category: "Languages" },
-  { name: "JavaScript", level: 78, category: "Languages" },
-  { name: "NumPy / Pandas", level: 92, category: "Data Science" },
-  { name: "Scikit-learn", level: 88, category: "Data Science" },
-  { name: "TensorFlow / PyTorch", level: 82, category: "Data Science" },
-  { name: "Matplotlib / Seaborn", level: 90, category: "Data Science" },
-  { name: "MySQL / PostgreSQL", level: 88, category: "Databases" },
+  { name: "Python", level: 90, category: "Languages" },
+  { name: "Java", level: 85, category: "Languages" },
+  { name: "SQL", level: 88, category: "Languages" },
+  { name: "JavaScript", level: 80, category: "Languages" },
+  { name: "Django", level: 85, category: "Frameworks" },
+  { name: "Django REST Framework", level: 85, category: "Frameworks" },
+  { name: "Bootstrap", level: 82, category: "Frameworks" },
+  { name: "React", level: 75, category: "Frameworks" },
+  { name: "Node.js", level: 75, category: "Frameworks" },
+  { name: "Express.js", level: 75, category: "Frameworks" },
   { name: "MongoDB", level: 80, category: "Databases" },
-  { name: "Spark (PySpark)", level: 75, category: "Big Data" },
-  { name: "AWS (S3, EC2, SageMaker)", level: 70, category: "Cloud" },
-  { name: "Docker", level: 72, category: "DevOps" },
-  { name: "Git / GitHub", level: 90, category: "DevOps" },
+  { name: "ETL Pipelines", level: 85, category: "Data Engineering" },
+  { name: "Power BI", level: 78, category: "Data Engineering" },
+  { name: "Cloud & Analytics", level: 80, category: "Cloud" },
+  { name: "Generative AI", level: 75, category: "AI/ML" },
 ];
 
 const categoryColors: Record<string, string> = {
   Languages: "bg-primary",
-  "Data Science": "bg-violet-500",
+  Frameworks: "bg-violet-500",
   Databases: "bg-emerald-500",
-  "Big Data": "bg-amber-500",
+  "Data Engineering": "bg-amber-500",
   Cloud: "bg-sky-500",
-  DevOps: "bg-rose-500",
+  "AI/ML": "bg-rose-500",
 };
 
 export function Skills() {
