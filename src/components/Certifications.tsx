@@ -4,25 +4,11 @@ import { Badge } from "@/components/ui/badge";
 
 const certifications = [
   {
-    title: "IBM Data Science Professional Certificate",
-    platform: "Coursera",
-    date: "Aug 2025",
-    description: "Completed 9 courses covering Python for DS, SQL, Data Analysis, Visualization, and ML models.",
+    title: "Python 101 for Data Science",
+    platform: "IBM / Cognitive Class",
+    date: "",
+    description: "Foundational course covering Python programming fundamentals for data science applications.",
     color: "bg-blue-500",
-  },
-  {
-    title: "Machine Learning A-Z: Hands-On Python & R",
-    platform: "Udemy",
-    date: "May 2025",
-    description: "Hands-on experience building ML models including regression, classification, clustering, and reinforcement learning.",
-    color: "bg-violet-500",
-  },
-  {
-    title: "Deep Learning Specialization",
-    platform: "Coursera - Andrew Ng",
-    date: "Mar 2025",
-    description: "Implemented neural networks, CNNs, RNNs, and LSTMs using TensorFlow/Keras.",
-    color: "bg-emerald-500",
   },
 ];
 
