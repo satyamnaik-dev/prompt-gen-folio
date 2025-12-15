@@ -7,7 +7,6 @@ const education = [
     degree: "Master of Computer Applications (MCA)",
     university: "Sambalpur University",
     location: "Burla, Sambalpur, Odisha",
-    percentage: "65.86%",
     duration: "Nov 2022 – Aug 2024",
   },
   {
@@ -15,7 +14,6 @@ const education = [
     degree: "Bachelor of Science (B.Sc)",
     university: "Sambalpur University",
     location: "Sardhapali, Sundergarh, Odisha",
-    percentage: "72.2%",
     duration: "Aug 2018 – April 2021",
   },
   {
@@ -23,7 +21,6 @@ const education = [
     degree: "12th (Science)",
     university: "CHSE (Council of Higher Secondary Education, Odisha)",
     location: "Kundukela, Odisha",
-    percentage: "45.83%",
     duration: "2016 – March 2018",
   },
   {
@@ -31,7 +28,6 @@ const education = [
     degree: "10th",
     university: "BSE (Board of Secondary Education, Odisha)",
     location: "Talpatia, Odisha",
-    percentage: "67.00%",
     duration: "2006 – February 2016",
   },
 ];
@@ -77,9 +73,6 @@ export function Education() {
                               <Calendar className="h-4 w-4" />
                               {edu.duration}
                             </div>
-                          </div>
-                          <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                            {edu.percentage}
                           </div>
                         </div>
                       </div>
