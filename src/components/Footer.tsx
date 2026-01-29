@@ -8,7 +8,7 @@ export function Footer() {
           <div className="text-center md:text-left">
             <p className="font-mono font-semibold mb-1">Satyam<span className="text-primary">.dev</span></p>
             <p className="text-sm text-muted-foreground">
-              Data Engineer • ML Specialist
+              Software Engineer
             </p>
           </div>
 
