@@ -9,21 +9,21 @@ const projects = [
     description: "A geospatial analysis tool that processes encoded route data to visualize multiple path options and automatically identify the shortest or most efficient route. Features geospatial computation, polyline reconstruction, and map-based insights through an interactive Python-driven interface with Folium/Streamlit.",
     tags: ["Python", "Data Engineering", "ETL", "GIS", "Data Visualization"],
     duration: "Oct 2025 – Present",
-    github: "https://github.com/satyamnaik-dev",
+    github: "https://github.com/satyamnaik-pro",
   },
   {
     title: "Dash App - Data Visualization",
     description: "Built interactive, production-ready data applications using Python, Plotly Dash, and modern data-viz patterns. Features scalable dashboard layouts, dynamic callbacks, interactive components, and external API integrations for real-world data insights.",
     tags: ["Python", "Plotly", "Dash", "Dashboards", "Data Visualization"],
     duration: "Aug 2025 – Present",
-    github: "https://github.com/satyamnaik-dev",
+    github: "https://github.com/satyamnaik-pro",
   },
   {
     title: "Blood Bank Management System",
     description: "Developed a Blood Bank Management System using Python, Django, HTML/CSS, JavaScript, and Django ORM. Implemented donor registration, blood inventory tracking, and request management with secure data handling and efficient donor-recipient matching.",
     tags: ["Python", "Django", "JavaScript", "Django REST Framework", "Bootstrap"],
     duration: "Feb 2024 – May 2024",
-    github: "https://github.com/satyamnaik-dev",
+    github: "https://github.com/satyamnaik-pro",
   },
 ];
 

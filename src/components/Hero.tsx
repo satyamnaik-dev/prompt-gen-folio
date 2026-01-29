@@ -59,7 +59,7 @@ export function Hero() {
 
           <div className="flex gap-4 justify-center pt-4">
             <a
-              href="https://github.com/satyamnaik-dev"
+              href="https://github.com/satyamnaik-pro"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -77,7 +77,7 @@ export function Hero() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:satyamnaik.dev@gmail.com"
+              href="mailto:satyam.naik.pro@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Email"
             >
