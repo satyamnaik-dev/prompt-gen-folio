@@ -30,7 +30,7 @@ export function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               Satyam Naik
               <span className="block text-primary font-bold border-2 border-primary rounded-lg px-4 py-2 mt-4 inline-block">
-                Data Engineer & ML Specialist
+                Software Engineer
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
